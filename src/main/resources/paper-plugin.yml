@@ -1,0 +1,7 @@
+name: Castle Siege
+version: '${version}'
+main: net.slqmy.castle_siege_plugin.CastleSiegePlugin
+api-version: '1.20'
+prefix: Castle Siege
+authors: [Slqmy, rolyPolyVole]
+description: A plugin that adds the Castle Siege minigame.
