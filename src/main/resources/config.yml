@@ -1,0 +1,9 @@
+classes:
+  mage:
+    max-player-percentage: 10
+  archer:
+    max-players-percentage: 15
+  knight:
+    max-players-percentage: 10
+  berserk:
+    max-players-percentage: 20
