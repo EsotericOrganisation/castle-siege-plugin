@@ -1,17 +1,14 @@
 package net.slqmy.castle_siege_plugin;
 
+import net.slqmy.castle_siege_plugin.managers.ArenaManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class CastleSiegePlugin extends JavaPlugin {
 
-    @Override
-    public void onEnable() {
-        // Plugin startup logic
-
-    }
+    private ArenaManager arenaManager;
 
     @Override
-    public void onDisable() {
-        // Plugin shutdown logic
+    public void onLoad() {
+        arenaManager = new ArenaManager(this);
     }
 }
