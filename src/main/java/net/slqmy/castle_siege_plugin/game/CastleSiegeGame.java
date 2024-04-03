@@ -1,7 +1,9 @@
 package net.slqmy.castle_siege_plugin.game;
 
+import net.slqmy.castle_siege_plugin.game.data.CastleSiegeArena;
+import net.slqmy.castle_siege_plugin.game.data.CastleSiegeTeam;
+import net.slqmy.castle_siege_plugin.game.data.CastleSiegeTeamBase;
 import org.bukkit.entity.Player;
-import org.bukkit.scoreboard.Team;
 
 import java.util.*;
 
@@ -9,11 +11,19 @@ public class CastleSiegeGame {
 
     private final static Random random = new Random();
 
-    private CastleSiegeArena arena;
+    private final CastleSiegeArena arena;
+    private final List<Player> players;
+    private final List<CastleSiegeTeam> teams;
 
-    private List<Player> players;
+    public CastleSiegeGame(CastleSiegeArena arena, List<Player> players) {
+        this.arena = arena;
+        this.players = players;
+        this.teams = new ArrayList<>();
+    }
 
-    private final List<CastleSiegeTeam> teams = new ArrayList<>();
+    public void loadMap() {
+
+    }
 
     public void startGame() {
         List<CastleSiegeTeamBase> teamBases = arena.getTeamBases();
@@ -22,7 +32,7 @@ public class CastleSiegeGame {
         int playerCount = players.size();
 
         int remainder = teamCount % playerCount;
-        int quotient = (int) Math.floor(((double) playerCount) / ((double) teamCount));
+        int quotient = (int) Math.floor((double) playerCount / (double) teamCount);
 
         for (CastleSiegeTeamBase teamBase : teamBases) {
             teams.add(new CastleSiegeTeam(teamBase));
@@ -44,4 +54,28 @@ public class CastleSiegeGame {
             team.spawnPlayers();
         }
     }
+    private void createTeams() {
+
+    }
+
+    private void assignTeams() {
+
+    }
+
+    private void preparePlayers() {
+
+    }
+
+    private void sendGuideMessages () {
+
+    }
+
+    private void assignClasses() {
+
+    }
+
+    private void sendClassMessages() {
+
+    }
+
 }

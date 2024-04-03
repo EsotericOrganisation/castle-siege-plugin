@@ -3,15 +3,15 @@ package net.slqmy.castle_siege_plugin.game.classes;
 import net.slqmy.castle_siege_plugin.CastleSiegePlugin;
 import org.bukkit.entity.Player;
 
-public class KingClass extends GameClass {
-
-    public KingClass(CastleSiegePlugin plugin) {
+public class KnightClass extends GameClass {
+    public KnightClass(CastleSiegePlugin plugin) {
         super(plugin);
     }
 
     @Override
     public int getPlayerCount(int totalPlayerCount) {
-        return 1;
+        int percentage = 10; //get from config;
+        return fromPercentage(percentage, totalPlayerCount);
     }
 
     @Override

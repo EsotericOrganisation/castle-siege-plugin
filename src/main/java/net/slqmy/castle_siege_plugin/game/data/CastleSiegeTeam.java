@@ -1,4 +1,4 @@
-package net.slqmy.castle_siege_plugin.game;
+package net.slqmy.castle_siege_plugin.game.data;
 
 import lombok.Getter;
 import org.bukkit.Location;
