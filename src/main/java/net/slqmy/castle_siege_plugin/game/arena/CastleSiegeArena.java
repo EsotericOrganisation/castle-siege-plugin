@@ -8,7 +8,7 @@ import org.bukkit.Material;
 import java.util.List;
 
 @Getter @Setter
-public class CastleSiegeArena {
+public final class CastleSiegeArena {
     private List<CastleSiegeTeamBase> bases;
     private List<Object> mineableRegions;
     private List<Object> gates;

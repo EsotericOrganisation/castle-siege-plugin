@@ -1,14 +1,13 @@
-package net.slqmy.castle_siege_plugin.game.classes;
+package net.slqmy.castle_siege_plugin.game.classes.base;
 
-import net.slqmy.castle_siege_plugin.CastleSiegePlugin;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 public abstract class CustomisableGameClass extends GameClass {
     private final String className;
 
-    public CustomisableGameClass(CastleSiegePlugin plugin, String className) {
-        super(plugin);
+    public CustomisableGameClass(String className) {
+        super();
         this.className = className.toLowerCase();
     }
 

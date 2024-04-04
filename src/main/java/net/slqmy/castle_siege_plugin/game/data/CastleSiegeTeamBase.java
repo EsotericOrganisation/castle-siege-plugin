@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @Getter @Builder
-public class CastleSiegeTeamBase {
+public final class CastleSiegeTeamBase {
     List<Location> spawnPoints;
     List<Location> horseLocations;
     List<Location> cannonLocations;

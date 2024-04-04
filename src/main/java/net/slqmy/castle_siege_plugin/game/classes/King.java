@@ -1,12 +1,12 @@
 package net.slqmy.castle_siege_plugin.game.classes;
 
-import net.slqmy.castle_siege_plugin.CastleSiegePlugin;
+import net.slqmy.castle_siege_plugin.game.classes.base.GameClass;
 import org.bukkit.entity.Player;
 
-public class King extends GameClass {
+public final class King extends GameClass {
 
-    public King(CastleSiegePlugin plugin) {
-        super(plugin);
+    public King() {
+        super();
     }
 
     @Override

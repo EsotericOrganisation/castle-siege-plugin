@@ -23,11 +23,10 @@ public final class CastleSiegePlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        customItemManager = new CustomItemManager(this);
-        customItemManager.init();
+        customItemManager = new CustomItemManager();
 
-        customItemManager.registerCustomItem(new LongBow(this));
-        new PlayerJoinListener(this).register();
+        customItemManager.registerCustomItem(new LongBow());
+        new PlayerJoinListener().register();
     }
 
 }
