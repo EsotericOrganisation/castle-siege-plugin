@@ -1,7 +1,8 @@
 package net.slqmy.castle_siege_plugin.game;
 
-import net.slqmy.castle_siege_plugin.game.data.CastleSiegeArena;
-import net.slqmy.castle_siege_plugin.game.data.CastleSiegeTeam;
+import net.slqmy.castle_siege_plugin.game.arena.CastleSiegeArena;
+import net.slqmy.castle_siege_plugin.game.data.TeamPlayer;
+import net.slqmy.castle_siege_plugin.game.teams.CastleSiegeTeam;
 import net.slqmy.castle_siege_plugin.game.data.CastleSiegeTeamBase;
 import org.bukkit.entity.Player;
 
@@ -26,44 +27,32 @@ public class CastleSiegeGame {
     }
 
     public void startGame() {
-        List<CastleSiegeTeamBase> teamBases = arena.getTeamBases();
 
-        int teamCount = teamBases.size();
-        int playerCount = players.size();
-
-        int remainder = teamCount % playerCount;
-        int quotient = (int) Math.floor((double) playerCount / (double) teamCount);
+    }
+    private void createTeams() {
+        List<CastleSiegeTeamBase> teamBases = arena.getBases();
 
         for (CastleSiegeTeamBase teamBase : teamBases) {
             teams.add(new CastleSiegeTeam(teamBase));
         }
+    }
 
-        for (int i = 0; i < teamCount; i++) {
-            CastleSiegeTeam team = teams.get(i);
+    private void assignPlayersToTeams() {
+        int totalTeams = teams.size();
+        int i = 0;
 
-            List<Player> teamPlayers = team.getPlayers();
+        for (Player player : players) {
+            CastleSiegeTeam team = teams.get(i % totalTeams);
+            team.getTeamPlayers().add(new TeamPlayer(player, team));
 
-            teamPlayers.addAll(players.subList(i * quotient, (i + 1) * quotient));
-
-            if (remainder != 0) {
-                teamPlayers.add(players.get(teamCount - i - 1));
-
-                remainder--;
-            }
-
-            team.spawnPlayers();
+            i++;
         }
-    }
-    private void createTeams() {
-
-    }
-
-    private void assignTeams() {
-
     }
 
     private void preparePlayers() {
-
+        for (CastleSiegeTeam team : teams) {
+            team.spawnPlayers();
+        }
     }
 
     private void sendGuideMessages () {

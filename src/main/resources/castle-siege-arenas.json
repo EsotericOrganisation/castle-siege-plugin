@@ -53,6 +53,21 @@
             "z": 0
         }
       }
-    ]
+    ],
+    "mineableRegions": [
+      {
+        "corner1": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "corner2": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+      }
+    ],
+    "gateBlock": "DARK_OAK_FENCE"
   }
 ]
