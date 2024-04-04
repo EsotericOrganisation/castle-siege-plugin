@@ -4,16 +4,16 @@ import net.slqmy.castle_siege_plugin.CastleSiegePlugin;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-public abstract class CustomisableGameClass extends GameClass {
-    private final String className;
+public abstract class CustomGameClass extends GameClass {
 
-    public CustomisableGameClass(CastleSiegePlugin plugin, String className) {
+    public CustomGameClass(CastleSiegePlugin plugin) {
         super(plugin);
-        this.className = className.toLowerCase();
     }
 
     @Override
     public int getPlayerCount(int totalPlayerCount) {
+        String className = getClass().getSimpleName();
+
         YamlConfiguration configuration = (YamlConfiguration) plugin.getConfig();
 
         ConfigurationSection classConfiguration = configuration.getConfigurationSection("classes." + className);

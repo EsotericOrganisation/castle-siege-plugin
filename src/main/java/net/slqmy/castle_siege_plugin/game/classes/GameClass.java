@@ -15,4 +15,7 @@ public abstract class GameClass {
 
     public abstract void equipPlayer(Player player);
 
+    protected int fromPercentage(int percentage, int total) {
+        return (int) (double) (total * percentage / 100);
+    }
 }
