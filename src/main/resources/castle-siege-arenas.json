@@ -1,58 +1,5 @@
 [
   {
-    "teamBases": [
-      {
-        "castleSpawnPoints": [
-          {
-            "x": 0,
-            "y": 0,
-            "z": 0
-          }
-        ],
-        "campSpawnPoints": [
-          {
-            "x": 0,
-            "y": 0,
-            "z": 0
-          }
-        ]
-      },
-      {
-        "castleSpawnPoints": [
-          {
-            "x": 0,
-            "y": 0,
-            "z": 0
-          }
-        ],
-        "campSpawnPoints": [
-          {
-            "x": 0,
-            "y": 0,
-            "z": 0
-          }
-        ]
-      }
-    ],
-    "oneWayFenceBlock": "DARK_OAK_FENCE",
-    "gates": [
-      {
-        "corner1": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-        },
-        "corner2_open": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-        },
-        "corner2_closed": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-        }
-      }
-    ]
+    "teamBases": []
   }
 ]
