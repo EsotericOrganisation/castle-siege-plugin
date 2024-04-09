@@ -19,7 +19,7 @@ import org.bukkit.util.Vector;
 public final class LongBow extends CustomItem {
     private static final NamespacedKey CUSTOM_ARROW_KEY = new NamespacedKey(CastleSiegePlugin.getInstance(), "custom_arrow");
     private static final NamespacedKey ARROW_SHOT_LOCATION_KEY = new NamespacedKey(CastleSiegePlugin.getInstance(), "arrow_shot_location");
-    private static final String IDENTIFIER = "longbow";
+    private static final String IDENTIFIER = "long_bow";
     private static final ItemStack ITEM = new ItemStackBuilder()
         .setMaterial(Material.BOW)
         .setName("<gold>Longbow")
@@ -27,17 +27,17 @@ public final class LongBow extends CustomItem {
             "<dark_gray><i>Powerful bow that can reach targets",
             "<dark_gray><i>from a longer distance.",
             "",
-            "<yellow>Ability: Longshot",
+            "<gold>Ability: Longshot",
             "<gray>Gain <red>+1◎ Arrow Power<gray> for every <red>10",
             "<gray>blocks that the arrow travels.",
             "",
-            "<gray>Fully charged shots travel <red>+30%<gray> faster."
+            "<gray>Fully charged shots travel <red>+25%<gray> faster."
         )
         .setUnbreakable(true)
         .setCustomData(IDENTIFIER)
         .build();
     public LongBow() {
-        super(ITEM, CastleSiegePlugin.getInstance());
+        super(ITEM);
     }
 
     @Override
@@ -62,7 +62,7 @@ public final class LongBow extends CustomItem {
         pdc.set(ARROW_SHOT_LOCATION_KEY, PersistentDataType.INTEGER_ARRAY, location);
 
         if (event.getForce() == 1.0F) {
-            Vector newVelocity = arrow.getVelocity().multiply(1.3);
+            Vector newVelocity = arrow.getVelocity().multiply(1.25);
             arrow.setVelocity(newVelocity);
         }
     }

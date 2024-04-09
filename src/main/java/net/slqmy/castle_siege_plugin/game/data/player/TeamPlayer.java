@@ -1,10 +1,10 @@
-package net.slqmy.castle_siege_plugin.game.data;
+package net.slqmy.castle_siege_plugin.game.data.player;
 
 import lombok.Getter;
 import lombok.Setter;
-import net.slqmy.castle_siege_plugin.game.classes.base.GameClass;
 import net.slqmy.castle_siege_plugin.game.classes.King;
-import net.slqmy.castle_siege_plugin.game.teams.CastleSiegeTeam;
+import net.slqmy.castle_siege_plugin.game.classes.base.GameClass;
+import net.slqmy.castle_siege_plugin.game.data.team.CastleSiegeTeam;
 import org.bukkit.entity.Player;
 
 @Getter

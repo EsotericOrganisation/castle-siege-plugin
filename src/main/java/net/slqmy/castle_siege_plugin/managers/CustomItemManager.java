@@ -4,6 +4,7 @@ import lombok.Getter;
 import net.slqmy.castle_siege_plugin.CastleSiegePlugin;
 import net.slqmy.castle_siege_plugin.customItems.CustomItem;
 import org.bukkit.event.Listener;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.HashMap;
 
@@ -19,5 +20,13 @@ public final class CustomItemManager implements Listener {
     public void registerCustomItem(CustomItem item) {
         identifierToItemMap.put(item.getIdentifier(), item);
         plugin.getServer().getPluginManager().registerEvents(item, plugin);
+    }
+
+    public CustomItem getCustomItem(String identifier) {
+        return identifierToItemMap.get(identifier);
+    }
+
+    public ItemStack getCustomItemStack(String identifier) {
+        return getCustomItem(identifier).getItemStack();
     }
 }

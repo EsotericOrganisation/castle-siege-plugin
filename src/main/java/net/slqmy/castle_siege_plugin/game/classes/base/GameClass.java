@@ -13,6 +13,8 @@ public abstract class GameClass {
         return 0;
     }
 
-    public abstract void equipPlayer(Player player);
+    public void equipPlayer(Player player) {
+        player.getInventory().clear();
+    }
 
 }

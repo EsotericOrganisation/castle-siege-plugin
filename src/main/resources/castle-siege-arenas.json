@@ -1,73 +1,81 @@
 [
-  {
-    "teamBases": [
-      {
-        "castleSpawnPoints": [
-          {
-            "x": 0,
-            "y": 0,
-            "z": 0
-          }
+    {
+        "world_name": "world",
+        "locale": "en",
+        "parrot_mail_enabled": true,
+        "artillery_enabled": true,
+        "monsters_enabled": true,
+        "traps_enabled": true,
+        "wild_traps_enabled": true,
+        "bases": [
+            {
+                "region": {
+                    "corner_1": [91, 0, 0],
+                    "corner_2": [0, 0, -131],
+                    "ignore_y": true
+                },
+                "mine_region": {
+                    "corner_1": [31, 102, 31],
+                    "corner_2": [-63, -64, -47],
+                    "ignore_y": false
+                },
+                "gates": [
+                    {
+                        "region": {
+                            "corner_1": [0, 0, 0],
+                            "corner_2_when_open": [0, 0, 0],
+                            "corner_2_when_closed": [0, 0, 0]
+                        },
+                        "health": 0,
+                        "single_decrement": false,
+                        "level": 1
+                    }
+                ],
+                "spawn_points": [
+                    [61.5, 96, -57.5],
+                    [60.5, 96, -59.5]
+                ],
+                "cannon_locations": [
+                    [0, 0, 0]
+                ],
+                "catapult_locations": [
+                    [0, 0, 0]
+                ],
+                "iron_golem_locations": [
+                    [0, 0, 0]
+                ],
+                "horse_locations": [
+                    [0, 0, 0],
+                    [0, 0, 0]
+                ],
+                "npc_locations": {
+                    "blacksmith": [0, 0, 0],
+                    "fletcher": [0, 0, 0],
+                    "artillery_guy": [0, 0, 0]
+                },
+                "parrot_mail_location": [0, 0, 0],
+                "attacking_camp": {
+                    "region": {
+                        "corner_1": [122, 0, 74],
+                        "corner_2": [212, 0, 194],
+                        "ignore_y": true
+                    },
+                    "teleporter_location": [0, 0, 0],
+                    "teleporter_radius": 0
+                }
+            }
         ],
-        "campSpawnPoints": [
-          {
-            "x": 0,
-            "y": 0,
-            "z": 0
-          }
-        ]
-      },
-      {
-        "castleSpawnPoints": [
-          {
-            "x": 0,
-            "y": 0,
-            "z": 0
-          }
-        ],
-        "campSpawnPoints": [
-          {
-            "x": 0,
-            "y": 0,
-            "z": 0
-          }
-        ]
-      }
-    ],
-    "oneWayFenceBlock": "DARK_OAK_FENCE",
-    "gates": [
-      {
-        "corner1": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-        },
-        "corner2_open": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-        },
-        "corner2_closed": {
-            "x": 0,
-            "y": 0,
-            "z": 0
+        "window_material": "DARK_OAK_FENCE",
+        "gold_drop_on_kill": 2,
+        "development_period_m": 10,
+        "attacking_period_m": 8,
+        "time_after_attack_end_until_instant_kill_s": 45,
+        "rest_period_m": 2.5,
+        "deathmatch": {
+           "attacking_sessions_per_team_until_deathmatch": 3,
+           "duration_m": 10,
+           "border_shrink_rate_per_tick": 0,
+           "total_border_shrink_ticks": 0
         }
-      }
-    ],
-    "mineableRegions": [
-      {
-        "corner1": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-        },
-        "corner2": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-        }
-      }
-    ],
-    "gateBlock": "DARK_OAK_FENCE"
-  }
+    }
 ]

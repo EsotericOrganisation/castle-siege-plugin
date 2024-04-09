@@ -17,9 +17,9 @@ public abstract class CustomItem implements Listener {
 
     @Getter
     protected final ItemStack itemStack;
-    public CustomItem(ItemStack itemStack, CastleSiegePlugin plugin) {
+    public CustomItem(ItemStack itemStack) {
         this.itemStack = itemStack;
-        this.plugin = plugin;
+        this.plugin = CastleSiegePlugin.getInstance();
     }
 
     public abstract String getIdentifier();

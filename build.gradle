@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id("io.freefair.lombok") version "8.6"
+    id("io.papermc.paperweight.userdev") version "1.5.5"
 }
 
 group = 'net.slqmy'
@@ -21,6 +22,7 @@ repositories {
 dependencies {
     implementation 'org.projectlombok:lombok:1.18.28'
     compileOnly "io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT"
+    paperweight.paperDevBundle("1.20.4-R0.1-SNAPSHOT")
 }
 
 def targetJavaVersion = 17
@@ -48,4 +50,14 @@ processResources {
     filesMatching('paper-plugin.yml') {
         expand props
     }
+}
+
+tasks {
+    build {
+        dependsOn reobfJar
+    }
+}
+
+jar {
+    destinationDirectory.set(file("../../TestServer/plugins"))
 }

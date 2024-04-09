@@ -15,7 +15,8 @@ public final class PlayerJoinListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-        player.getInventory().addItem(plugin.getCustomItemManager().getIdentifierToItemMap().get("longbow").getItemStack());
+        player.getInventory().addItem(plugin.getCustomItemManager().getIdentifierToItemMap().get("long_bow").getItemStack());
+        player.getInventory().addItem(plugin.getCustomItemManager().getIdentifierToItemMap().get("recurve_bow").getItemStack());
     }
 
     public void register() {
