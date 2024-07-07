@@ -1,17 +1,19 @@
 package net.slqmy.castle_siege_plugin.game.data;
 
-import lombok.Getter;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
 import java.util.List;
 import java.util.Random;
 
-@Getter
 public class CastleSiegeTeam {
     private final static Random random = new Random();
 
     private List<Player> players;
+
+    public List<Player> getPlayers() {
+        return players;
+    }
 
     private CastleSiegeTeamBase teamBase;
 
