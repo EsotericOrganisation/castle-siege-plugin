@@ -1,23 +1,23 @@
 package net.slqmy.castle_siege_plugin.managers;
 
 import lombok.Getter;
-import net.slqmy.castle_siege_plugin.game.CastleSiegeGame;
-import net.slqmy.castle_siege_plugin.game.data.arena.CastleSiegeArenaConfig;
+import net.slqmy.castle_siege_plugin.game.Game;
+import net.slqmy.castle_siege_plugin.game.data.arena.ArenaConfig;
 import org.bukkit.World;
 
 import java.util.HashMap;
+import java.util.UUID;
 
 @Getter
 public class GameManager {
-    private final HashMap<World, CastleSiegeGame> games = new HashMap<>();
-    public GameManager() {}
+    private final HashMap<UUID, Game> games = new HashMap<>();
 
-    public CastleSiegeGame createGame(World world, CastleSiegeArenaConfig arena) {
-        games.put(world, new CastleSiegeGame(arena, world.getPlayers()));
-        return games.get(world);
+    public Game createGame(World world, ArenaConfig arena) {
+        games.put(world.getUID(), new Game(arena, world.getPlayers()));
+        return games.get(world.getUID());
     }
 
     public boolean hasOngoingGame(World world) {
-        return games.containsKey(world);
+        return games.containsKey(world.getUID());
     }
 }

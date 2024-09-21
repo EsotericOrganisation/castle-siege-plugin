@@ -1,53 +1,73 @@
 package net.slqmy.castle_siege_plugin.util;
 
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemStack;
+import net.kyori.adventure.sound.Sound;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.slqmy.castle_siege_plugin.CastleSiegePlugin;
-import org.bukkit.Location;
-import org.bukkit.World;
+import org.bukkit.Material;
+import org.bukkit.entity.HumanEntity;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public final class Util {
     private static final CastleSiegePlugin plugin = CastleSiegePlugin.getInstance();
-    public static List<Location> toLocations(List<Double[]> xyzs, World world) {
-        return xyzs.stream().map(xyz -> toLocation(xyz, world)).toList();
+    private static final MiniMessage MM = MiniMessage.miniMessage();
+
+    private Util() {}
+
+    public static String toMMFormat(NamedTextColor colour) {
+        return "<" + colour.toString() + ">";
     }
 
-    public static Location toLocation(Double[] xyz, World world) {
-        return new Location(world, xyz[0], xyz[1], xyz[2]);
+    public static void addToInvOrDrop(Player player, ItemStack item) {
+        player.getInventory().addItem(item)
+            .forEach((slot, leftover) -> player.getWorld().dropItem(player.getLocation(), item));
     }
 
-    public static ServerLevel toNMSWorld(World world) {
-        try {
-            return (ServerLevel) world.getClass().getMethod("getHandle").invoke(world);
-        } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
-            throw new RuntimeException(e);
+    public static Component wrapInSquareBrackets(String text, String colour) {
+        String colourFormat = "<" + colour + ">";
+        String resetFormat = "</" + colour + ">";
+
+        return MM.deserialize(colourFormat + "[" + resetFormat + text + colourFormat + "]" + resetFormat);
+    }
+
+    public static boolean removeItems(Inventory inventory, Material material, int amount) {
+        return removeItems(inventory, new ItemStack(material), amount);
+    }
+
+    public static boolean removeItems(Inventory inventory, ItemStack item, int amount) {
+        ItemStack[] contents = inventory.getContents();
+        Map<ItemStack, Integer> itemsToBeRemoved = new HashMap<>();
+
+        for (ItemStack itemStack : contents) {
+            if (itemStack == null) continue;
+            if (amount == 0) break;
+
+            if (itemStack.isSimilar(item)) {
+                int toBeRemoved = Math.min(amount, itemStack.getAmount());
+                itemsToBeRemoved.put(itemStack, toBeRemoved);
+
+                amount -= toBeRemoved;
+            }
         }
+
+        if (amount == 0) {
+            itemsToBeRemoved.forEach((itemStack, removedAmount) -> itemStack.setAmount(itemStack.getAmount() - removedAmount));
+        }
+
+        return amount == 0;
     }
 
-    public static ItemStack toNMSItemStack(org.bukkit.inventory.ItemStack itemStack) {
-
-        try {
-            return (ItemStack) itemStack
-                .getClass()
-                .getMethod("asNMSCopy", org.bukkit.inventory.ItemStack.class)
-                .invoke(null, itemStack);
-        } catch (InvocationTargetException | IllegalAccessException | NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        }
+    public static void playSound(HumanEntity player, org.bukkit.Sound sound) {
+        player.playSound(Sound.sound(sound.key(), Sound.Source.AMBIENT, 1.0f, 1.0f));
     }
 
-    public static LivingEntity toNMSLivingEntity(org.bukkit.entity.LivingEntity livingEntity) {
-        try {
-            return (LivingEntity) livingEntity
-                .getClass()
-                .getMethod("getHandle")
-                .invoke(livingEntity);
-        } catch (InvocationTargetException | IllegalAccessException | NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        }
+    public static void playSound(HumanEntity player, org.bukkit.Sound sound, float volume, float pitch) {
+        player.playSound(Sound.sound(sound.key(), Sound.Source.AMBIENT, volume, pitch));
     }
 }

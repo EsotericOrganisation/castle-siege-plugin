@@ -1,6 +1,8 @@
 package net.slqmy.castle_siege_plugin.game.classes;
 
-import net.slqmy.castle_siege_plugin.game.classes.base.GameClass;
+import net.slqmy.castle_siege_plugin.game.Game;
+import net.slqmy.castle_siege_plugin.game.classes.abs.GameClass;
+import net.slqmy.castle_siege_plugin.items.ItemIdentifier;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.EntityEquipment;
@@ -8,9 +10,8 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 public final class King extends GameClass {
-
-    public King() {
-        super();
+    public King(Game game) {
+        super(game);
     }
 
     @Override
@@ -24,7 +25,7 @@ public final class King extends GameClass {
 
         Inventory inventory = player.getInventory();
         inventory.setItem(0, new ItemStack(Material.STONE_SWORD));
-        inventory.setItem(1, plugin.getCustomItemManager().getCustomItemStack("long_bow"));
+        inventory.setItem(1, game.getItemManager().getCustomItemStack(ItemIdentifier.LONGBOW));
         inventory.setItem(7, new ItemStack(Material.COOKED_BEEF, 12));
         inventory.setItem(9, new ItemStack(Material.ARROW, 12));
 
@@ -33,5 +34,15 @@ public final class King extends GameClass {
         equipment.setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
         equipment.setLeggings(new ItemStack(Material.LEATHER_LEGGINGS));
         equipment.setBoots(new ItemStack(Material.LEATHER_BOOTS));
+    }
+
+    @Override
+    public void sendInfo(Player player) {
+        player.sendMessage("You are the king!");
+    }
+
+    @Override
+    public King newInstance() {
+        return new King(game);
     }
 }
