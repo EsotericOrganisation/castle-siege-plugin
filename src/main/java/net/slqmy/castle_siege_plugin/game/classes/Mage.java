@@ -9,10 +9,10 @@ import org.bukkit.inventory.EntityEquipment;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-public final class Knight extends CustomisableGameClass {
-    private static final String NAME = "Knight";
+public final class Mage extends CustomisableGameClass {
+    private static final String NAME = "Mage";
 
-    public Knight(Game game) {
+    public Mage(Game game) {
         super(NAME, game);
     }
 
@@ -35,11 +35,11 @@ public final class Knight extends CustomisableGameClass {
 
     @Override
     public void sendInfo(Player player) {
-        player.sendMessage("You are a knight!");
+        player.sendMessage("You are a mage!");
     }
 
     @Override
-    public Knight newInstance() {
-        return new Knight(game);
+    public Mage newInstance() {
+        return new Mage(game);
     }
 }

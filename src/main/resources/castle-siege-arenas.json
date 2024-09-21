@@ -1,5 +1,180 @@
 [
-  {
-    "teamBases": []
-  }
+    {
+        "world_name": "world",
+        "locale": "en",
+        "parrot_mail_enabled": true,
+        "artillery_enabled": true,
+        "monsters_enabled": true,
+        "traps_enabled": true,
+        "wild_traps_enabled": true,
+        "bases": [
+            {
+                "id": "team_blue",
+                "name": "<blue>\u2691 Blue</blue>",
+                "color": "blue",
+                "region": {
+                    "corner_1": [91, 0, 0],
+                    "corner_2": [0, 0, -131],
+                    "ignore_y": true
+                },
+                "mine_region": {
+                    "environment": "mine",
+                    "corner_1": [31, 102, 31],
+                    "corner_2": [-63, -64, -47],
+                    "ignore_y": false,
+                    "mob_cap": 20,
+                    "mob_spawn_rate": 1
+                },
+                "gates": [
+                    {
+                        "region": {
+                            "corner_1": [0, 0, 0],
+                            "corner_2_when_open": [0, 0, 0],
+                            "corner_2_when_closed": [0, 0, 0]
+                        },
+                        "health": 0,
+                        "single_decrement": false,
+                        "level": 1
+                    }
+                ],
+                "spawn_points": [
+                    [61.5, 96, -57.5],
+                    [60.5, 96, -59.5]
+                ],
+                "cannon_locations": [
+                    [0, 0, 0]
+                ],
+                "catapult_locations": [
+                    [0, 0, 0]
+                ],
+                "iron_golem_locations": [
+                    [0, 0, 0]
+                ],
+                "horse_locations": [
+                    [0, 0, 0],
+                    [0, 0, 0]
+                ],
+                "npcs": [
+                    {
+                        "type": "blacksmith",
+                        "location": [65.5, 95, -46.5, 180, 0],
+                        "name": "<bold><yellow>Blacksmith\n<bold><gold>CLICK",
+                        "skin_value": "ewogICJ0aW1lc3RhbXAiIDogMTY4MjM2NTg0OTQyOCwKICAicHJvZmlsZUlkIiA6ICIxMzAyMWNlNmEzNGU0ODI3ODhkNTczNTY5MWJmYzU1MSIsCiAgInByb2ZpbGVOYW1lIiA6ICJ2aWJlYm95IiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg1YWM4MmE1M2ZiZWEyZjg2YjcyYWVlN2NhMzNhNzI5MmNiYWJkMjBjOTI1Y2MzMmU2YmZmN2U0NmM3ZDVhMjIiCiAgICB9CiAgfQp9",
+                        "skin_signature": "Xxrn5jDbJnndat90xRtL7xvKYLQ95NTd5zbWlMq6RVYiUyhsDLDs8FzJw/bX5eIowCyzd0ffMvIX9eTW5xE2ZYbC9wYjYlo2YCmB1sTkDccRhPaDOk7XWBpf8NowMVXKPbUDKDjQGZOodMCEzCVh5EGn2Qrq9M5ktn2Ca1whJBeaeK7JrP7/cYfw6ZRI9TtMHaH/rVCXQiQo/RyV9Oaw6uUSu5vjaR5jdzm9ocRy9fD3pIk1UNqWOUUbAChVQcAqiaXZX6y1Ms0gkkKUq4pzvm7ZCzgvP5tRxvETa96dVReyB+IYOg/qIgOEaFpOkCm4BR9x/nr2QSeDtslsi7ZviOJqB/AbN0a+oAaws9KJjAj3o03iPOdoZEnkbNLVUPK/7iafVzgr4f3Huk4yJu/3+No9eSnri/x7PhpFCfQeDh2BjbGtZhNilSEgLJAfwvQK5bRX3+7ezahKqh7kWwfs9Wg/zme+3cglCA0WfcwTqrKuRBDIWGGjm9SiNE11dDmWxw5tJbIp8AYPs2RcEs526DRauGnXWqkdThoWZPXF4DcnOvir+Hi8+3k2u4BKHhlCtd1hOqU7682dsbhOj8UaC47wEQbFR+uKw7V6PBRdBTDkPLoSg0LUdqu1yszJyVNNFvBaSVQmugMmcD9R5ZyPYO+t2dtTeZI0S0kUh0j8J/4="
+                    }
+                ],
+                "parrot_mail_location": [0, 0, 0],
+                "attacking_camp": {
+                    "region": {
+                        "corner_1": [122, 0, 74],
+                        "corner_2": [212, 0, 194],
+                        "ignore_y": true
+                    },
+                    "teleporter_location": [185, 65, 177],
+                    "teleporter_radius": 8
+                }
+            },
+            {
+                "id": "team_red",
+                "name": "<red>\u2691 Red</red>",
+                "color": "red",
+                "region": {
+                    "corner_1": [681, 0, 0],
+                    "corner_2": [772, 0, -131],
+                    "ignore_y": true
+                },
+                "mine_region": {
+                    "environment": "mine",
+                    "corner_1": [741, 102, 31],
+                    "corner_2": [835, -64, -47],
+                    "ignore_y": false,
+                    "mob_cap": 20,
+                    "mob_spawn_rate": 1
+                },
+                "gates": [
+                    {
+                        "region": {
+                            "corner_1": [0, 0, 0],
+                            "corner_2_when_open": [0, 0, 0],
+                            "corner_2_when_closed": [0, 0, 0]
+                        },
+                        "health": 0,
+                        "single_decrement": false,
+                        "level": 1
+                    }
+                ],
+                "spawn_points": [
+                    [710.5, 96, -57.5],
+                    [711.5, 96, -59.5]
+                ],
+                "cannon_locations": [
+                    [0, 0, 0]
+                ],
+                "catapult_locations": [
+                    [0, 0, 0]
+                ],
+                "iron_golem_locations": [
+                    [0, 0, 0]
+                ],
+                "horse_locations": [
+                    [0, 0, 0],
+                    [0, 0, 0]
+                ],
+                "npcs": [
+                    {
+                        "type": "blacksmith",
+                        "location": [707.5, 95, -46.5, 180, 0],
+                        "name": "<bold><yellow>Blacksmith\n<bold><gold>CLICK",
+                        "skin_value": "ewogICJ0aW1lc3RhbXAiIDogMTY4MjM2NTg0OTQyOCwKICAicHJvZmlsZUlkIiA6ICIxMzAyMWNlNmEzNGU0ODI3ODhkNTczNTY5MWJmYzU1MSIsCiAgInByb2ZpbGVOYW1lIiA6ICJ2aWJlYm95IiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg1YWM4MmE1M2ZiZWEyZjg2YjcyYWVlN2NhMzNhNzI5MmNiYWJkMjBjOTI1Y2MzMmU2YmZmN2U0NmM3ZDVhMjIiCiAgICB9CiAgfQp9",
+                        "skin_signature": "Xxrn5jDbJnndat90xRtL7xvKYLQ95NTd5zbWlMq6RVYiUyhsDLDs8FzJw/bX5eIowCyzd0ffMvIX9eTW5xE2ZYbC9wYjYlo2YCmB1sTkDccRhPaDOk7XWBpf8NowMVXKPbUDKDjQGZOodMCEzCVh5EGn2Qrq9M5ktn2Ca1whJBeaeK7JrP7/cYfw6ZRI9TtMHaH/rVCXQiQo/RyV9Oaw6uUSu5vjaR5jdzm9ocRy9fD3pIk1UNqWOUUbAChVQcAqiaXZX6y1Ms0gkkKUq4pzvm7ZCzgvP5tRxvETa96dVReyB+IYOg/qIgOEaFpOkCm4BR9x/nr2QSeDtslsi7ZviOJqB/AbN0a+oAaws9KJjAj3o03iPOdoZEnkbNLVUPK/7iafVzgr4f3Huk4yJu/3+No9eSnri/x7PhpFCfQeDh2BjbGtZhNilSEgLJAfwvQK5bRX3+7ezahKqh7kWwfs9Wg/zme+3cglCA0WfcwTqrKuRBDIWGGjm9SiNE11dDmWxw5tJbIp8AYPs2RcEs526DRauGnXWqkdThoWZPXF4DcnOvir+Hi8+3k2u4BKHhlCtd1hOqU7682dsbhOj8UaC47wEQbFR+uKw7V6PBRdBTDkPLoSg0LUdqu1yszJyVNNFvBaSVQmugMmcD9R5ZyPYO+t2dtTeZI0S0kUh0j8J/4="
+                    }
+                ],
+                "parrot_mail_location": [0, 0, 0],
+                "attacking_camp": {
+                    "region": {
+                        "corner_1": [650, 0, 74],
+                        "corner_2": [560, 0, 194],
+                        "ignore_y": true
+                    },
+                    "teleporter_location": [587, 65, 177],
+                    "teleporter_radius": 8
+                }
+            }
+        ],
+        "global_regions": {
+            "mountains": [
+                {
+                    "environment": "mountain",
+                    "corner_1": [-80, 120, -90],
+                    "corner_2": [-10, 200, 20],
+                    "ignore_y": false,
+                    "mob_cap": 20,
+                    "mob_spawn_rate": 1
+                }
+            ],
+            "valleys": [
+                {
+                    "environment": "valley",
+                    "corner_1": [-37, 110, 98],
+                    "corner_2": [-186, 70, -183],
+                    "ignore_y": false,
+                    "mob_cap": 40,
+                    "mob_spawn_rate": 0.3
+                }
+            ]
+        },
+        "window_material": { "material": "DARK_OAK_FENCE" },
+        "gold_drop_on_kill": 2,
+        "development_period_m": 1,
+        "attacking_period_m": 8,
+        "time_before_attack_end_when_warning_s": 60,
+        "time_after_attack_end_until_instant_kill_s": 45,
+        "rest_period_m": 2.5,
+        "death_match": {
+           "attacking_sessions_per_team_until_deathmatch": 1,
+           "duration_m": 10,
+           "border_shrink_rate_per_tick": 0,
+           "total_border_shrink_ticks": 0
+        }
+    }
 ]
